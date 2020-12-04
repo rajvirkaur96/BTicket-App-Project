@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BTicketSystem.Views.CreateAccount"
+             Title="Create User Account">
+    
+    
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+
+            <BoxView HeightRequest="5"/>
+
+            <Image Source="BTicketSystem/Images/aairTicket.png" 
+                       BackgroundColor="Transparent" 
+                       WidthRequest="70" 
+                       HeightRequest="70"/>
+
+
+
+            <Label Text="Fill info and Create Account"
+                     FontSize="20"
+                      HorizontalTextAlignment="Center"
+                       WidthRequest="180"
+                      TextColor="Black"
+                       HorizontalOptions="CenterAndExpand"/>
+
+            <BoxView HeightRequest="2" BackgroundColor="LightBlue" />
+
+            <Frame BackgroundColor="#d5e4e8" HasShadow="False" Opacity="0.3">
+                <StackLayout Orientation="Vertical" Spacing="10" >
+
+                    <Entry x:Name="entryName" Text="{Binding Name}" Placeholder="NAME"   
+                           PlaceholderColor="Black" HeightRequest="40"   
+                          HorizontalTextAlignment="Center"
+                           TextColor="Black"
+                           WidthRequest="120"/>
+
+                    <Entry x:Name="entryEmail" Text="{Binding Email}" Placeholder="EMAIL"   
+                           PlaceholderColor="Black" HeightRequest="40"   
+                           Keyboard="Email"  
+                           TextColor="Black"
+                           HorizontalTextAlignment="Center"
+                           WidthRequest="120"/>
+
+                    <Entry x:Name="entryPassword" Text="{Binding Password}" Placeholder="PASSWORD"   
+                           PlaceholderColor="Black" HeightRequest="40"   
+                           IsPassword="True"  
+                           TextColor="Black"
+                           HorizontalTextAlignment="Center"
+                           WidthRequest="120"/>
+
+                    <Entry x:Name="entryContact" Text="{Binding Contact}" Placeholder="CONTACT NUMBER"   
+                           PlaceholderColor="Black" HeightRequest="40"   
+                            Keyboard="Numeric"
+                           IsPassword="False"  
+                           TextColor="Black"
+                           HorizontalTextAlignment="Center"
+                           WidthRequest="120"/>
+
+                </StackLayout>
+            </Frame>
+            <Button Clicked="OnButtonClicked"  Text="Create Account" TextColor="Black"  
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#75aebd" />
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BTicketSystem.Views.CreateBookingPage"
+             Title="Make Booking">
+    
+    
+    <ContentPage.Content>
+        <StackLayout Padding="2">
+
+            <StackLayout Orientation="Horizontal" >
+
+                <Label x:Name="logedInUserBind" Text="{Binding userNameBind}"
+                          HorizontalOptions="StartAndExpand"
+                          TextColor="Blue"/>
+
+            </StackLayout>
+
+            <Image Source="BTicketSystem/Images/aairTicket.png" 
+                       BackgroundColor="Transparent" 
+                       WidthRequest="40" 
+                       HeightRequest="40" />
+
+
+            <Label Text="Provide Detail to Make Booking"
+                     FontSize="20"
+                      HorizontalTextAlignment="Center"
+                       WidthRequest="160"
+                      TextColor="Black"/>
+
+            <Frame BackgroundColor="#d5e4e8" HasShadow="False" Opacity="0.3">
+                <StackLayout Orientation="Vertical" Spacing="1">
+
+
+                    <!--DROP DOWN OF LIST OF CITIES-->
+                    <Picker x:Name="entryFrom" Title="SELECT DEPARTURE FROM " SelectedIndexChanged="OnDepFromSelectedIndexChanged" HorizontalOptions="FillAndExpand"  HorizontalTextAlignment="Center" WidthRequest="120" TextColor="Black" TitleColor="Black">
+                        <Picker.Items>
+                            <x:String>Gatwick</x:String>
+                            <x:String>Heathrow</x:String>
+                            <x:String>London</x:String>
+                            <x:String>Birmingham</x:String>
+                            <x:String>Newcastle</x:String>
+                            <x:String>Manchester</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <!--DROP DOWN LSIT OF TICKET TYPE-->
+                    <Picker x:Name="entryType" Title="SELECT TICKET TYPE " SelectedIndexChanged="OnTcketTypeSelectedIndexChanged" HorizontalOptions="FillAndExpand"  HorizontalTextAlignment="Center" WidthRequest="120" TextColor="Black" TitleColor="Black">
+                        <Picker.Items>
+                            <x:String>First Class</x:String>
+                            <x:String>Business Class</x:String>
+                            <x:String>Economy</x:String>
+                            <x:String>Economy Plus</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <!--DROP DOWN LSIT OF ARRIVAL-->
+                    <Picker x:Name="entryTo" Title="SELECT ARRIVAL TO " SelectedIndexChanged="OnArriveToSelectedIndexChanged" HorizontalOptions="FillAndExpand"  HorizontalTextAlignment="Center" WidthRequest="120" TextColor="Black" TitleColor="Black">
+                        <Picker.Items>
+                            <x:String>Delhi</x:String>
+                            <x:String>Chandigarh</x:String>
+                            <x:String>Canada</x:String>
+                            <x:String>Australia</x:String>
+                            <x:String>New Zealand</x:String>
+                            <x:String>Germany</x:String>
+                            <x:String>Rome</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <!--DROP DOWN LSIT OF TICKET TYPE-->
+                    <Picker Title="SELECT AIRLINE " SelectedIndexChanged="OnAirlineSelectedIndexChanged" HorizontalOptions="FillAndExpand"  HorizontalTextAlignment="Center" WidthRequest="120" TextColor="Black" TitleColor="Black">
+                        <Picker.Items>
+                            <x:String>Air India</x:String>
+                            <x:String>British Airways</x:String>
+                            <x:String>Emirates</x:String>
+                            <x:String>Canada Airways</x:String>
+                        </Picker.Items>
+                    </Picker>
+
+                    <!--DATE PICKER FOR TICKET DATE-->
+                    <DatePicker x:Name="entryDate" 
+                                VerticalOptions="CenterAndExpand" 
+                                Date="{Binding StartDateBnd}" 
+                                Format="dd-MM-yyyy" 
+                                HorizontalOptions="FillAndExpand" 
+                                WidthRequest="120"
+                                TextColor="Black"/>
+                    
+                   
+                    <!--TIME PICKER FOR TICKET TIME-->
+                    <TimePicker x:Name="_ticketTimePicker" 
+                                VerticalOptions="CenterAndExpand" 
+                                Time="{Binding EndDateBnd}" 
+                                Format="T"
+                                HorizontalOptions="FillAndExpand" 
+                                WidthRequest="120"
+                                TextColor="Black"/>
+
+
+
+                </StackLayout>
+            </Frame>
+
+            <Button Clicked="OnBookTicketClicked"  Text="Confirm Booking" TextColor="Black"  
+                    FontAttributes="Bold" FontSize="Large" HorizontalOptions="FillAndExpand"  
+                    BackgroundColor="#75aebd" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BTicketSystem.Views.MainViewPage"
+             Title="View Booking Details">
+    
+    
+    <ContentPage.Content>
+        <StackLayout Padding="10" Orientation="Vertical">
+
+            <StackLayout Orientation="Horizontal" >
+
+                <Label x:Name="logedInUserBind" Text="{Binding userNameBind}"
+                          HorizontalOptions="StartAndExpand"
+                          TextColor="Blue"/>
+
+            </StackLayout>
+
+
+            <Image Source="BTicketSystem/Images/aairTicket.png" 
+                       BackgroundColor="Transparent" 
+                       WidthRequest="70" 
+                       HeightRequest="70"/>
+
+            <Label Text="List of Confirm Bookings"  FontSize="20" FontAttributes="Bold" HorizontalOptions="CenterAndExpand"/>
+
+            <StackLayout Orientation="Horizontal" BackgroundColor="#d5e4e8" Padding="2">
+
+                <Label Text="From" XAlign="Center" YAlign="Center" TextColor="Black" FontAttributes="Bold" />
+                <BoxView WidthRequest="15" />
+                <Label Text="Arrive To" XAlign="Center" YAlign="Center" TextColor="Black" FontAttributes="Bold"/>
+                <BoxView WidthRequest="20" />
+
+                <Label Text="Type" XAlign="Center" YAlign="Center" TextColor="Black" FontAttributes="Bold"/>
+                <BoxView WidthRequest="25" />
+                <Label Text="Ticket Date" XAlign="Center" YAlign="Center" TextColor="Black" FontAttributes="Bold"/>
+                <BoxView WidthRequest="10" />
+                <Label Text="Ticket Time"  XAlign="Center" YAlign="Center" TextColor="Black" FontAttributes="Bold"/>
+
+            </StackLayout>
+
+            <ListView x:Name="listConfirmBookings" ItemsSource="{Binding ModelPairs}" HasUnevenRows="True"  BackgroundColor="#d5e4e8" Margin="2">
+
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="{Binding DepartureFrom}" TextColor="Black" HeightRequest="15"/>
+                                    <BoxView WidthRequest="10" />
+                                    <Label Text="{Binding ArriveTo}" TextColor="Black" HeightRequest="15"/>
+                                    <BoxView WidthRequest="10" />
+                                    <Label Text="{Binding TicketType}" TextColor="Black" HeightRequest="15"/>
+                                    <BoxView WidthRequest="15" />
+                                    <Label Text="{Binding TicketDate}" TextColor="Black" HeightRequest="15"/>
+                                    <BoxView WidthRequest="12" />
+                                    <Label Text="{Binding TicketTime}" TextColor="Black" HeightRequest="15"/>
+
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+
+            <StackLayout Orientation="Horizontal">
+                
+                
+
+               
+
+            </StackLayout>
+
+            <Grid VerticalOptions="StartAndExpand" Padding="2" Margin="1" >
+
+                <Grid.RowDefinitions >
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*"/>
+                    <ColumnDefinition Width="5*"/>
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Row="0"
+                       Grid.Column="0" 
+                       Text="Make New Ticket Booking" 
+                       FontAttributes="None" 
+                       FontSize="14" />
+
+
+                <Image Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Source="BTicketSystem/Images/btnPlusSmall.png" HorizontalOptions="EndAndExpand">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                        Tapped="OnImageNameTappedAsync"
+                        NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+
+
+                <Button  Clicked="OnUserAboutUsBtnClicked" 
+                         Grid.Row="1"
+                         Grid.Column="0"
+                        Text="Info About Us" 
+                        TextColor="Black"  
+                        FontAttributes="Bold" 
+                        FontSize="Medium" 
+                        HorizontalOptions="FillAndExpand"  
+                        BackgroundColor="#75aebd"
+                        />
+                <!--
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="See user info and about Airticket " />
+                    <Label Text="click here" TextColor="Blue" FontSize="20">
+                        <Label.GestureRecognizers>
+                            
+                            <TapGestureRecognizer Tapped="RegisterNewUserCommand" />
+                        </Label.GestureRecognizers>
+                    </Label>
+                </StackLayout>
+        -->
+        </Grid>
+
+
+        </StackLayout>
+    </ContentPage.Content>
+    
+    
+</ContentPage>

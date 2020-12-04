@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BTicketSystem.Views.InfoPage"
+             Title="User And Company Info">
+    
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+
+            <Image Source="BTicketSystem/Images/aairTicket.png" 
+                       BackgroundColor="Transparent" 
+                       WidthRequest="70" 
+                       HeightRequest="70"/>
+
+
+
+            <Label Text="About Us"
+                     FontSize="20"
+                      HorizontalTextAlignment="Center"
+                       WidthRequest="180"
+                      TextColor="Black"
+                       HorizontalOptions="CenterAndExpand"/>
+
+
+            <Label Text="An airline is a company that provides air transport services for traveling passengers and freight. Airlines utilize aircraft to supply these services and may form partnerships or alliances with other airlines for codeshare agreements, in which they both offer and operate the same flight."
+                     FontSize="12"
+                      HorizontalTextAlignment="Center"
+                       WidthRequest="180"
+                      TextColor="Black"
+                       HorizontalOptions="CenterAndExpand"/>
+
+            <Label x:Name="lblName"
+                    Text="{Binding Name}"
+                     FontSize="20"
+                     HorizontalTextAlignment="Center"
+                     WidthRequest="180"
+                     TextColor="Black"
+                     HorizontalOptions="CenterAndExpand"/>
+
+            <Label x:Name="lblEmail"
+                    Text="{Binding Email}"
+                     FontSize="20"
+                     HorizontalTextAlignment="Center"
+                     WidthRequest="180"
+                     TextColor="Black"
+                     HorizontalOptions="CenterAndExpand"/>
+
+            <Label x:Name="lblContact"
+                    Text="{Binding Contact}"
+                     FontSize="20"
+                     HorizontalTextAlignment="Center"
+                     WidthRequest="180"
+                     TextColor="Black"
+                     HorizontalOptions="CenterAndExpand"/>
+
+            <Label x:Name="lblID"
+                    Text="{Binding ID}"
+                     FontSize="20"
+                     HorizontalTextAlignment="Center"
+                     WidthRequest="180"
+                     TextColor="Black"
+                     HorizontalOptions="CenterAndExpand"/>
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
